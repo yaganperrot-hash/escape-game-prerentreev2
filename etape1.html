@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étape 1 - Services | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etape1-services.sh</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>./etape1-services.sh --restore-mapping</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="📍 Étape 1 - Retrouvez les services perdus">📍 Étape 1 - Retrouvez les services perdus</h1>
+        
+        <div class="warning-box typewriter" data-text="⚠️ PROBLÈME DÉTECTÉ: Afin de vous interdire l'entrée à votre formation, le hacker a chamboulé les services. Retrouvez chaque salle avec le bon service.">
+          <strong>⚠️ PROBLÈME DÉTECTÉ</strong><br>
+          Afin de vous interdire l'entrée à votre formation, le hacker a chamboulé les services. Retrouvez chaque salle avec le bon service.
+        </div>
+
+        <h2 class="typewriter" data-text="🎯 Mission">🎯 Mission</h2>
+        <p class="typewriter" data-text="Associez chaque salle au service correspondant :">Associez chaque salle au service correspondant :</p>
+
+        <table class="delayed-text" style="opacity: 0;">
+          <thead>
+            <tr>
+              <th>Salle</th>
+              <th>Service attendu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>G11</strong></td>
+              <td><input type="text" id="G11" placeholder="Tapez le nom du service..."></td>
+            </tr>
+            <tr>
+              <td><strong>G18</strong></td>
+              <td><input type="text" id="G18" placeholder="Tapez le nom du service..."></td>
+            </tr>
+            <tr>
+              <td><strong>G12</strong></td>
+              <td><input type="text" id="G12" placeholder="Tapez le nom du service..."></td>
+            </tr>
+            <tr>
+              <td><strong>Accueil</strong></td>
+              <td><input type="text" id="Accueil" placeholder="Tapez le nom du service..."></td>
+            </tr>
+            <tr>
+              <td><strong>G19</strong></td>
+              <td><input type="text" id="G19" placeholder="Tapez le nom du service..."></td>
+            </tr>
+            <tr>
+              <td><strong>Admissions</strong></td>
+              <td><input type="text" id="Admissions" placeholder="Tapez le nom du service..."></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box delayed-text" style="opacity: 0;">
+          <strong>💡 Indices disponibles</strong><br>
+          • Labo, Bureau Pédagogique, Service administratif, Accueil, Service technique, Service admissions
+        </div>
+
+        <div class="info-box" style="margin-top: 20px;">
+          <strong>💡 Indices disponibles</strong><br>
+          • Labo, Bureau Pédagogique, Service administratif, Accueil, Service technique, Service admissions
+        </div>
+
+        <div id="result"></div>
+
+        <div class="command-help" style="margin-top: 30px;">
+          <h3>📝 Commandes disponibles</h3>
+          <ul class="command-list">
+            <li>
+              <span class="command-name">y / validate</span>
+              <span class="command-description">Valider vos réponses</span>
+            </li>
+            <li>
+              <span class="command-name">next / suivant</span>
+              <span class="command-description">Passer à l'étape suivante (après validation réussie)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="terminal-prompt" style="margin-top: 30px;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInputStep1" 
+            placeholder="Tapez 'y' pour valider vos réponses..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

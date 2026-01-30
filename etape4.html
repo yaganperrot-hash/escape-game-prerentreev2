@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étape 4 - Debugger l'intra | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etape4-debug-intra.html</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>nano intra-login-page.html</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="🐛 Étape 4 - Debuggez la page de l'intra">🐛 Étape 4 - Debuggez la page de l'intra</h1>
+        
+        <div class="warning-box typewriter" data-text="⚠️ CODE CORROMPU: Vous vous débrouillez très bien ! Mais attention, le hacker s'est attaqué à la page de connexion de votre intra pour vous empêcher d'accéder au contenu de la formation ! Sans intra pas d'ETNA !">
+          <strong>⚠️ CODE CORROMPU</strong><br>
+          Vous vous débrouillez très bien ! Mais attention, le hacker s'est attaqué à la page de connexion de votre intra pour vous empêcher d'accéder au contenu de la formation ! Sans intra pas d'ETNA !
+        </div>
+
+       <p class="typewriter" data-text="🎯 Mission: Corrigez le code HTML ci-dessous pour faire apparaître le bouton Connectez-vous et permettre aux étudiants de se connecter.">
+          <strong>🎯 Mission</strong><br>
+          Corrigez le code HTML ci-dessous pour faire apparaître le bouton "Connectez-vous" et permettre aux étudiants de se connecter. Le bouton est présent dans le code mais... il est caché !
+        </div>
+
+        <div class="editor-preview delayed-text" style="opacity: 0;">
+          <textarea id="codeHtml" rows="20">
+<div style="width:100%; text-align:center; font-family:Arial, sans-serif; background:white; padding:20px; box-sizing:border-box;">
+  <h1 style="color:black; font-weight:bold; margin-bottom:20px;">ETNA</h1>
+  <p style="color:black; margin-bottom:20px;">Renseignez vos identifiants</p>
+  <input type="text" placeholder="Login" style="display:block; margin:0 auto 10px auto; padding:8px; width:80%; border:1px solid #ccc; border-radius:4px;">
+  <input type="password" placeholder="Password" style="display:block; margin:0 auto 10px auto; padding:8px; width:80%; border:1px solid #ccc; border-radius:4px;">
+  <button style="display:none;">Connectez-vous</button>
+  <p style="color:gray; text-decoration:underline; margin-top:10px;">Identifiants oubliés ou première connexion ?</p>
+</div>
+          </textarea>
+
+          <iframe id="preview"></iframe>
+        </div>
+
+        <div id="result4"></div>
+
+        <div class="command-help delayed-text" style="margin-top: 30px; opacity: 0;">
+          <h3>🔍 Que chercher ?</h3>
+          <ul style="color: var(--text-secondary); margin-left: 20px; line-height: 2;">
+            <li>Trouvez la ligne avec <code style="color: var(--accent-blue);">&lt;button&gt;</code></li>
+            <li>Regardez le style CSS appliqué au bouton</li>
+            <li>Supprimez ou modifiez la propriété qui cache le bouton</li>
+            <li>Le bouton devrait apparaître dans l'aperçu à droite</li>
+          </ul>
+          <h3 style="margin-top: 20px;">📝 Commandes</h3>
+          <ul class="command-list">
+            <li>
+              <span class="command-name">y / validate</span>
+              <span class="command-description">Valider votre correction</span>
+            </li>
+            <li>
+              <span class="command-name">next / suivant</span>
+              <span class="command-description">Passer à l'étape suivante</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="terminal-prompt delayed-text" style="margin-top: 30px; opacity: 0;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInputStep4" 
+            placeholder="Tapez 'y' pour valider..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

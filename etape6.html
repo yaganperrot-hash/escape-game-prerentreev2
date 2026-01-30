@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étape 6 - Découvrez le hacker | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etape6-identify-hacker.sh</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>./etape6-identify-hacker.sh --trace-logs</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="🕵️ Étape 6 - Découvrez le hacker">🕵️ Étape 6 - Découvrez le hacker</h1>
+        
+        <div class="success-box typewriter" data-text="✅ PROGRÈS EXCELLENT: Vous avez réussi à déjouer l'ensemble des actes malveillants du hacker !">
+          <strong>✅ PROGRÈS EXCELLENT</strong><br>
+          Vous avez réussi à déjouer l'ensemble des actes malveillants du hacker !
+        </div>
+
+        <h2 class="typewriter" data-text="📋 Logs système récents">📋 Logs système récents</h2>
+        <div class="delayed-text" style="background: var(--bg-tertiary); opacity: 0; padding: 16px; border-radius: 4px; border: 1px solid var(--border-color); font-family: 'Fira Code', monospace; font-size: 12px; margin: 20px 0;">
+          <div style="color: var(--text-secondary);">[2025-01-27 14:32:15] <span style="color: var(--accent-red);">WARNING</span> Unauthorized access detected</div>
+          <div style="color: var(--text-secondary);">[2025-01-27 14:32:18] <span style="color: var(--accent-yellow);">INFO</span> User login: yagan.perrot@etna.io</div>
+          <div style="color: var(--text-secondary);">[2025-01-27 14:32:45] <span style="color: var(--accent-red);">ERROR</span> Database manipulation detected</div>
+          <div style="color: var(--text-secondary);">[2025-01-27 14:33:12] <span style="color: var(--accent-yellow);">INFO</span> IP traced to internal network</div>
+          <div style="color: var(--text-secondary);">[2025-01-27 14:33:40] <span style="color: var(--accent-red);">CRITICAL</span> System files modified by perrot_y</div>
+          <div style="color: var(--text-secondary);">[2025-01-27 14:34:02] <span style="color: var(--accent-green);">INFO</span> Coordinator badge scanned at G18</div>
+        </div>
+
+        <h2 class="delayed-text" style="opacity: 0;">🎯 Identifiez le coupable</h2>
+        <p class="delayed-text" style="margin-bottom: 20px; opacity: 0;">
+          D'après les indices et les logs système, qui est le hacker ?
+        </p>
+
+        <div class="delayed-text" style="margin: 30px 0; opacity: 0;">
+          <label for="hack" style="display: block; margin-bottom: 8px; color: var(--accent-green); font-weight: 600;">
+            Nom du hacker :
+          </label>
+          <input 
+            type="text" 
+            id="hack" 
+            placeholder="Prénom Nom..."
+            style="font-size: 16px;"
+          >
+        </div>
+
+        <div id="result6"></div>
+
+        <div class="command-help delayed-text" style="margin-top: 30px; opacity: 0;">
+          <h3>🔎 Indices supplémentaires</h3>
+          <ul style="color: var(--text-secondary); margin-left: 20px; line-height: 2;">
+            <li>Le coupable travaille à l'ETNA</li>
+            <li>C'est un coordinateur pédagogique</li>
+            <li>Il a accès au badge G18 (Bureau Pédagogique)</li>
+            <li>Il préfère prolonger ses vacances... 🏖️</li>
+          </ul>
+          <h3 style="margin-top: 20px;">📝 Commandes</h3>
+          <ul class="command-list">
+            <li>
+              <span class="command-name">y / validate</span>
+              <span class="command-description">Valider l'identité</span>
+            </li>
+            <li>
+              <span class="command-name">next / suivant</span>
+              <span class="command-description">Passer à l'étape suivante</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="terminal-prompt delayed-text" style="margin-top: 30px; opacity: 0;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInputStep6" 
+            placeholder="Tapez 'y' pour valider..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

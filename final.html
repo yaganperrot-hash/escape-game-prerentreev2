@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Accomplie ! | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>mission-complete.sh</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>./mission-complete.sh --celebrate</span>
+      </div>
+
+      <div class="terminal-output congratulations">
+        <div class="firework" style="animation-delay: 0s;">🎆</div>
+        <div class="firework" style="animation-delay: 0.3s;">🎇</div>
+        <div class="firework" style="animation-delay: 0.6s;">✨</div>
+        
+        <h1 style="font-size: 56px; margin: 40px 0;">
+          🎉 FÉLICITATIONS ! 🎉
+        </h1>
+        
+        <div class="success-box" style="font-size: 18px; margin: 30px 0;">
+          <strong>✅ MISSION ACCOMPLIE</strong><br>
+          Vous avez réussi à déjouer les plans du hacker et à sauver l'ETNA !
+        </div>
+
+        <div style="background: var(--bg-tertiary); padding: 24px; border-radius: 8px; border: 2px solid var(--success); margin: 30px 0;">
+          <h2 style="color: var(--success); margin-bottom: 16px;">🏆 Vos exploits :</h2>
+          <ul style="list-style: none; padding: 0; line-height: 2.5;">
+            <li>✓ Services restaurés et remis en ordre</li>
+            <li>✓ École correctement identifiée</li>
+            <li>✓ Messages binaires décodés avec succès</li>
+            <li>✓ Page de l'intra réparée</li>
+            <li>✓ Base de données réorganisée</li>
+            <li>✓ Hacker identifié : Yagan PERROT</li>
+            <li>✓ Malware désactivé avec le mot de passe VOLCAN</li>
+          </ul>
+        </div>
+
+        <div class="info-box" style="font-size: 20px; margin: 30px 0;">
+          <strong>🎓 Bienvenue à l'ETNA !</strong><br>
+          Vous avez prouvé vos compétences en informatique. Vous êtes maintenant prêt(e) à rejoindre l'aventure ETNA ! 🚀
+        </div>
+
+        <div style="margin: 40px 0;">
+          <p style="font-size: 16px; color: var(--text-secondary);">
+            Temps total : <strong id="final-time" style="color: var(--accent-yellow);">Chargement...</strong>
+          </p>
+        </div>
+
+        <div style="margin-top: 40px;">
+          <a href="index.html">
+            <button style="font-size: 16px; padding: 12px 24px;">
+              🔄 Rejouer l'escape game
+            </button>
+          </a>
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border-color);">
+          <p style="color: var(--text-secondary); font-size: 14px;">
+            Escape Game créé pour l'ETNA<br>
+            Merci d'avoir joué ! 💚
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Display final time
+    document.addEventListener('DOMContentLoaded', () => {
+      const startTime = parseInt(sessionStorage.getItem('escapeGameStartTime'));
+      if (startTime) {
+        const elapsed = Date.now() - startTime;
+        const minutes = Math.floor(elapsed / 60000);
+        const seconds = Math.floor((elapsed % 60000) / 1000);
+        
+        const finalTimeElement = document.getElementById('final-time');
+        if (finalTimeElement) {
+          finalTimeElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+      }
+
+      // Clear session storage if user wants to replay
+      const replayButton = document.querySelector('a[href="index.html"]');
+      if (replayButton) {
+        replayButton.addEventListener('click', () => {
+          sessionStorage.removeItem('escapeGameStartTime');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

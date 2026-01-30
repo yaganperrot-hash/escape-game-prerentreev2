@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETNA - Escape Game Terminal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etna-escape-game.terminal</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span class="typewriter" data-text="./welcome-to-etna.sh">./welcome-to-etna.sh</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="🎓 Bienvenue dans votre nouvelle école !">🎓 Bienvenue dans votre nouvelle école !</h1>
+        
+        <p class="typewriter" data-text="Aujourd'hui commence votre pré-rentrée">
+          Aujourd'hui commence votre pré-rentrée
+        </p>
+
+        <!-- Login Section -->
+        <div id="login-section" class="delayed-text" style="opacity: 0; margin: 30px 0;">
+          <label for="loginInput" style="display: block; margin-bottom: 12px; color: var(--accent-green); font-size: 16px;">
+            📧 Insérer votre login ETNA :
+          </label>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <input 
+              type="text" 
+              id="loginInput" 
+              placeholder="prenom_nom"
+              style="flex: 1; padding: 12px; background: var(--bg-tertiary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 14px;"
+              autocomplete="off"
+            >
+          </div>
+          <div id="login-status" style="margin-top: 12px; font-size: 14px;"></div>
+        </div>
+
+        <p class="typewriter" data-text="zaerzethyujuikyuthngbrokvnefivbzev" style="color: var(--accent-red); opacity: 0;" id="corrupted-text">
+          zaerzethyujuikyuthngbrokvnefivbzev
+        </p>
+
+        <div id="system-logs" style="margin: 20px 0;"></div>
+
+        <p class="typewriter delayed-text" data-text="Vous devez mener l'enquête afin de sauver votre inscription et l'école ! Chaque énigme réussie vous donnera une lettre, qui mises bout à bout vous donneront le mot de passe pour stopper l'attaque.">
+          Vous devez mener l'enquête afin de sauver votre inscription et l'école ! Chaque énigme réussie vous donnera une lettre, qui mises bout à bout vous donneront le mot de passe pour stopper l'attaque.
+        </p>
+
+        <div class="info-box delayed-text" style="opacity: 0;">
+          <strong>💡 CONSEIL</strong> : Notez bien chaque lettre obtenue ! Vous en aurez besoin à la fin.
+        </div>
+
+        <div class="command-help delayed-text" style="opacity: 0;">
+          <h3>📝 Navigation - Pour les débutants</h3>
+          <ul class="command-list">
+            <li>
+              <span class="command-name">next / suivant</span>
+              <span class="command-description">Tapez cette commande pour passer à l'étape suivante</span>
+            </li>
+            <li>
+              <span class="command-name">help / aide</span>
+              <span class="command-description">Affiche la liste des commandes disponibles</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="terminal-prompt delayed-text" style="margin-top: 30px; opacity: 0;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInput" 
+            placeholder="Tapez 'next' pour commencer..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

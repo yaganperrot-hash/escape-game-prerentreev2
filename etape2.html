@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étape 2 - Le maître du code | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etape2-verification.sh</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>./etape2-verification.sh --check-school</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="🔐 Étape 2 - Le maître du code">🔐 Étape 2 - Le maître du code</h1>
+        
+        <div class="warning-box typewriter" data-text="⚠️ VÉRIFICATION REQUISE: Pour récupérer la deuxième lettre vous devez vous assurer que vous ne vous êtes pas trompé d'école !!">
+          <strong>⚠️ VÉRIFICATION REQUISE</strong><br>
+          Pour récupérer la deuxième lettre vous devez vous assurer que vous ne vous êtes pas trompé d'école !!
+        </div>
+
+        <h2 class="typewriter" data-text="🎯 Mission">🎯 Mission</h2>
+        <p class="typewriter" data-text="Trouvez le nom de l'école où vous êtes inscrit(e).">Trouvez le nom de l'école où vous êtes inscrit(e).</p>
+
+        <div class="delayed-text" style="opacity: 0; margin: 30px 0;">
+          <label for="etape2Input" style="display: block; margin-bottom: 8px; color: var(--accent-green);">
+            Réponse :
+          </label>
+          <input 
+            type="text" 
+            id="etape2Input" 
+            placeholder="Entrez le nom de l'école..."
+            style="font-size: 16px;"
+          >
+        </div>
+
+        <div id="result2"></div>
+
+        <div class="command-help delayed-text" style="margin-top: 30px; opacity: 0;">
+          <h3>💡 Astuce</h3>
+          <p style="color: var(--text-secondary);">
+            Si vous êtes perdu(e), cherchez des indices dans la salle G11. Le nom de l'école doit apparaître quelque part...
+          </p>
+          <h3 style="margin-top: 20px;">📝 Commandes</h3>
+          <ul class="command-list">
+            <li>
+              <span class="command-name">y / validate</span>
+              <span class="command-description">Valider votre réponse</span>
+            </li>
+            <li>
+              <span class="command-name">next / suivant</span>
+              <span class="command-description">Passer à l'étape suivante</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="terminal-prompt delayed-text" style="margin-top: 30px; opacity: 0;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInputStep2" 
+            placeholder="Tapez 'y' pour valider..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

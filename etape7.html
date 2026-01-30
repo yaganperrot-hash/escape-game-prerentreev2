@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étape 7 - Stopper le malware | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etape7-final-password.sh</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>sudo ./etape7-stop-malware.sh --disable</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="🛑 Étape 7 - Stopper le malware">🛑 Étape 7 - Stopper le malware</h1>
+        
+        <div class="success-box typewriter" data-text="🎉 FÉLICITATIONS ! Vous avez réussi à déjouer l'attaque malveillante de Yagan PERROT qui préférait prolonger ses vacances que de faire son travail (honte à lui !).">
+          <strong>🎉 FÉLICITATIONS !</strong><br>
+          Vous avez réussi à déjouer l'attaque malveillante de Yagan PERROT qui préférait prolonger ses vacances que de faire son travail (honte à lui !).
+        </div>
+
+        <div class="warning-box typewriter" data-text="⚠️ DERNIÈRE ÉTAPE CRITIQUE: Grâce à vos talents informatiques, vous avez récupéré plusieurs lettres tout au long de votre parcours.">
+          <strong>💡 Mission finale</strong><br>
+          Grâce à vos talents informatiques, vous avez récupéré plusieurs lettres tout au long de votre parcours.
+          Ces lettres sont un indice afin de désactiver pour toujours le malware. Trouvez le mot de passe imaginé par le hacker et sauvez votre inscription !
+        </div>
+
+        <h2 class="delayed-text" style="opacity: 0;">🔐 Saisie du mot de passe système</h2>
+        <p class="delayed-text" style="margin-bottom: 20px; opacity: 0;">
+          Utilisez les lettres récoltées pour former le mot de passe qui désactivera le malware.
+        </p>
+
+        <div class="delayed-text" style="margin: 30px 0; opacity: 0;">
+          <label for="finalCode" style="display: block; margin-bottom: 8px; color: var(--accent-red); font-weight: 600;">
+            🔑 Mot de passe final :
+          </label>
+          <input 
+            type="password" 
+            id="finalCode" 
+            placeholder="Tapez le mot de passe..."
+            style="font-size: 18px; letter-spacing: 2px;"
+          >
+        </div>
+
+        <div id="result7"></div>
+
+        <div class="terminal-prompt delayed-text" style="margin-top: 30px; opacity: 0;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInputStep7" 
+            placeholder="Tapez 'y' pour désactiver le malware..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

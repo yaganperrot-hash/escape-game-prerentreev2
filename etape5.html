@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étape 5 - Explorateur de fichiers | ETNA Escape Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <button class="terminal-button close"></button>
+        <button class="terminal-button minimize"></button>
+        <button class="terminal-button maximize"></button>
+      </div>
+      <div class="terminal-title">
+        <img src="https://etna.io/wp-content/themes/etna-refonte-theme/assets/images/logo-etna.png" alt="ETNA Logo">
+        <span>etape5-file-recovery.sh</span>
+      </div>
+      <div class="terminal-timer" id="timer">00:00</div>
+    </div>
+
+    <div class="terminal-body">
+      <div class="terminal-prompt">
+        <span class="terminal-prompt-symbol">$</span>
+        <span>./etape5-file-recovery.sh --restore-paths</span>
+      </div>
+
+      <div class="terminal-output">
+        <h1 class="typewriter" data-text="📂 Étape 5 - Explorateur de fichiers">📂 Étape 5 - Explorateur de fichiers</h1>
+        
+        <div class="warning-box typewriter" data-text="⚠️ SYSTÈME DE FICHIERS DÉSORDONNÉ: Le hacker a mélangé les fichiers dans l'ordinateur du responsable pédagogique. À vous de les ranger dans les bons dossiers.">
+          <strong>⚠️ SYSTÈME DE FICHIERS DÉSORDONNÉ</strong><br>
+          Le hacker a mélangé les fichiers dans l'ordinateur du responsable pédagogique. À vous de les ranger dans les bons dossiers.
+        </div>
+
+         <p class="typewriter" data-text="🎯 Instructions: Glissez-déposez les fichiers vers leurs dossiers de destination. Vérifiez le chemin d'accès (Path) sur chaque bloc pour savoir où il doit aller. Attention : certains fichiers partagés doivent être copiés dans plusieurs dossiers !">
+          <strong>💡 Instructions</strong><br>
+          • Glissez-déposez les fichiers vers leurs dossiers de destination<br>
+          • Vérifiez le <strong>chemin d'accès</strong> (Path) sur chaque bloc pour savoir où il doit aller<br>
+          • Attention : certains fichiers partagés doivent être copiés dans plusieurs dossiers !
+        </div>
+
+        <h2 class="typewriter" data-text="📁 Dossiers de destination">📁 Dossiers de destination</h2>
+
+        <div class="dropzones-container delayed-text" style="opacity: 0;">
+          <div class="dropzone" id="zonePiscine" data-path="C:\User\ResponsablePedagogique\Piscine\">
+            <div class="zone-title">📁 Dossier Piscine</div>
+            <div class="zone-path">C:\User\ResponsablePedagogique\Piscine\</div>
+            <div class="zone-content"></div>
+          </div>
+
+          <div class="dropzone" id="zoneC2WK" data-path="C:\User\ResponsablePedagogique\Projet C2WK\">
+            <div class="zone-title">📁 Dossier Projet C2WK</div>
+            <div class="zone-path">C:\User\ResponsablePedagogique\Projet C2WK\</div>
+            <div class="zone-content"></div>
+          </div>
+
+          <div class="dropzone" id="zoneAlternance" data-path="C:\User\ResponsablePedagogique\Alternance\">
+            <div class="zone-title">📁 Dossier Alternance</div>
+            <div class="zone-path">C:\User\ResponsablePedagogique\Alternance\</div>
+            <div class="zone-content"></div>
+          </div>
+        </div>
+
+        <h2 class="delayed-text" style="opacity: 0;">📄 Fichiers en vrac</h2>
+        <p class="delayed-text" style="color: var(--text-secondary); margin-bottom: 16px; opacity: 0;">
+          Analysez le chemin de destination affiché sous chaque fichier :
+        </p>
+
+        <div class="dropzone delayed-text" id="source" style="opacity: 0;">
+          <div class="zone-content">
+            <div class="block" draggable="true" data-id="Projets en groupe">
+              📄 Projets en groupe
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Projet Réseau">
+              📄 Projet Réseau
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Projet DEV">
+              📄 Projet DEV
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+
+            <div class="block" draggable="true" data-id="Career Center">
+              📄 Career Center
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Alternance\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Ateliers CV/linkedin">
+              📄 Ateliers CV/linkedin
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Alternance\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Simulations d'entretiens">
+              📄 Simulations d'entretiens
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Alternance\</span>
+            </div>
+
+            <div class="block" draggable="true" data-id="ETNA2">
+              📄 ETNA2
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Alternance\</span>
+            </div>
+            <div class="block" draggable="true" data-id="ETNA3">
+              📄 ETNA3
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Alternance\</span>
+            </div>
+            <div class="block" draggable="true" data-id="ETNA4">
+              📄 ETNA4
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Alternance\</span>
+            </div>
+
+            <div class="block" draggable="true" data-id="Python">
+              📄 Python
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Bash">
+              📄 Bash
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+            </div>
+            <div class="block" draggable="true" data-id="3 semaines">
+              📄 3 semaines
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+            </div>
+
+            <div class="block" draggable="true" data-id="Typescript">
+              📄 Typescript
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Angular">
+              📄 Angular
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="React">
+              📄 React
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="9 semaines">
+              📄 9 semaines
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="UX/UI">
+              📄 UX/UI
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="ALGO/IA">
+              📄 ALGO/IA
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+
+            <div class="block" draggable="true" data-id="9h-17h">
+              📄 9h-17h
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Soutenance : Samedi">
+              📄 Soutenance : Samedi
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+            <div class="block" draggable="true" data-id="Assets">
+              📄 Assets
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Piscine\</span>
+              <span class="sous-texte">C:\User\ResponsablePedagogique\Projet C2WK\</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="result5"></div>
+
+        <div class="command-help delayed-text" style="margin-top: 30px; opacity: 0;">
+          <h3>🎮 Comment jouer ?</h3>
+          <ol style="color: var(--text-secondary); margin-left: 20px; line-height: 2;">
+            <li>Glissez un fichier vers son dossier de destination</li>
+            <li>Le fichier devient vert s'il est au bon endroit</li>
+            <li>Certains fichiers appartiennent à plusieurs dossiers !</li>
+            <li>Une fois tous les fichiers rangés, tapez 'y' pour valider</li>
+          </ol>
+          <h3 style="margin-top: 20px;">📝 Commandes</h3>
+          <ul class="command-list">
+            <li>
+              <span class="command-name">y / validate</span>
+              <span class="command-description">Valider l'organisation</span>
+            </li>
+            <li>
+              <span class="command-name">next / suivant</span>
+              <span class="command-description">Passer à l'étape suivante</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="terminal-prompt delayed-text" style="margin-top: 30px; opacity: 0;">
+          <span class="terminal-prompt-symbol">$</span>
+          <input 
+            type="text" 
+            id="commandInputStep5" 
+            placeholder="Tapez 'y' pour valider..."
+            style="background: transparent; border: none; color: var(--text-primary); font-family: inherit; font-size: inherit; outline: none; flex: 1;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
