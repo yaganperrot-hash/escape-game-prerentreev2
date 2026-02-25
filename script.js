@@ -837,10 +837,16 @@ document.addEventListener('DOMContentLoaded', () => {
           bin3: bin3.value.toLowerCase().trim()
         };
         
-        function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
-        const hasEtna2Info = norm(answers.bin1).includes('niveau 5') || norm(answers.bin1).includes('bachelor');
-        const hasEtna3Info = norm(answers.bin2).includes('niveau 6') || norm(answers.bin2).includes('3e annee');
-        const hasEtna4Info = norm(answers.bin3).includes('niveau 7') || norm(answers.bin3).includes('master of science');
+        function norm(s) {
+          return s.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[\u2018\u2019\u0060\u00b4]/g, "'")
+            .replace(/\s+/g, ' ').trim();
+        }
+        function hasAll(input, phrases) { return phrases.every(p => norm(input).includes(norm(p))); }
+        const hasEtna2Info = hasAll(answers.bin1, ['niveau 5', 'bachelor', '2eme annee', 'monde professionnel']);
+        const hasEtna3Info = hasAll(answers.bin2, ['niveau 6', '3e annee', 'etna', 'autonomie']);
+        const hasEtna4Info = hasAll(answers.bin3, ['niveau 7', 'master of science', '4e annee', 'specialisation']);
         
         if (hasEtna2Info && hasEtna3Info && hasEtna4Info) {
           resultDiv.innerHTML = `
