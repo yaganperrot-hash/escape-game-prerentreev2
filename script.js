@@ -770,7 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       setTimeout(() => {
         const answer = input.value.toLowerCase().trim();
-        const correctAnswers = ['etna', 'l\'etna', 'letna'];
+        const correctAnswers = ['42'];
         
         if (correctAnswers.includes(answer)) {
           resultDiv.innerHTML = `
