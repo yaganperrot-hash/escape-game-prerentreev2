@@ -1103,18 +1103,18 @@ document.addEventListener('DOMContentLoaded', () => {
       
       setTimeout(() => {
         const answer = input.value.toLowerCase().trim();
-        const correctAnswers = ['volcan', 'v-o-l-c-a-n', 'volcano'];
-        
+        const correctAnswers = ['etna', 'l\'etna', 'letna'];
+
         if (correctAnswers.includes(answer)) {
           resultDiv.innerHTML = `
             <div class="success-box" style="animation: slideIn 0.5s ease;">
               <strong>🎉 FÉLICITATIONS !</strong><br>
               Vous avez désactivé le malware !<br>
-              Les lettres V-O-L-C-A-N formaient bien le mot de passe.<br><br>
+              Les lettres récoltées formaient bien le mot de passe : ETNA.<br><br>
               Redirection vers la page finale...
             </div>
           `;
-          
+
           setTimeout(() => {
             window.location.href = 'final.html';
           }, 3000);
@@ -1122,7 +1122,7 @@ document.addEventListener('DOMContentLoaded', () => {
           resultDiv.innerHTML = `
             <div class="error-box" style="animation: slideIn 0.5s ease;">
               <strong>❌ Mauvais mot de passe</strong><br>
-              Utilisez les lettres récoltées : V-O-L-C-A-N
+              Utilisez les lettres récoltées au fil des énigmes.
             </div>
           `;
         }
