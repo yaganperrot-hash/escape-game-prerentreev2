@@ -675,23 +675,28 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Simulate checking delay
       setTimeout(() => {
+        function normalizeInput(str) {
+          return str.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
         const answers = {
-          'G11': 'labo',
-          'G18': 'bureau pédagogique',
+          'G11': 'co-labs',
+          'G18': 'service pédagogique',
           'G12': 'service administratif',
           'Accueil': 'accueil',
-          'G19': 'service technique',
-          'Admissions': 'service admissions'
+          'G19': 'blu service technique',
+          'G01': 'career center admissions'
         };
-        
+
         let allCorrect = true;
         let errors = [];
-        
+
         for (const [room, expected] of Object.entries(answers)) {
           const input = document.getElementById(room);
           if (input) {
-            const value = input.value.toLowerCase().trim();
-            const isCorrect = value === expected || value === expected.replace('service ', '') || value === expected.replace('bureau ', '');
+            const value = normalizeInput(input.value);
+            const exp = normalizeInput(expected);
+            const isCorrect = value === exp || value === exp.replace('service ', '') || value === exp.replace('blu ', '');
             
             if (!isCorrect) {
               allCorrect = false;
