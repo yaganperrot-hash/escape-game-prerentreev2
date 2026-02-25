@@ -837,9 +837,10 @@ document.addEventListener('DOMContentLoaded', () => {
           bin3: bin3.value.toLowerCase().trim()
         };
         
-        const hasEtna2Info = answers.bin1.includes('24 mois') || answers.bin1.includes('niveau 7');
-        const hasEtna3Info = answers.bin2.includes('15 mois') || answers.bin2.includes('niveau 5');
-        const hasEtna4Info = answers.bin3.includes('15 mois') || answers.bin3.includes('niveau 6') || answers.bin3.includes('informatique');
+        function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+        const hasEtna2Info = norm(answers.bin1).includes('niveau 5') || norm(answers.bin1).includes('bachelor');
+        const hasEtna3Info = norm(answers.bin2).includes('niveau 6') || norm(answers.bin2).includes('3e annee');
+        const hasEtna4Info = norm(answers.bin3).includes('niveau 7') || norm(answers.bin3).includes('master of science');
         
         if (hasEtna2Info && hasEtna3Info && hasEtna4Info) {
           resultDiv.innerHTML = `
